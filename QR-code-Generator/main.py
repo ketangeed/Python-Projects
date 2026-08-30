@@ -17,8 +17,11 @@ import qrcode
 url = input("Enter your URL : ")
 img_file_name = input("Enter the name of the file : ")
 
+
 img = qrcode.make(url)
 
-type(img)
-
 img.save(f"{img_file_name}.png")
+
+if not(img_file_name.endswith(".png")):
+    img_file_name = img_file_name + ".png"
+
